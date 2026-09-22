@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>学生管理练习</title>
+    <link rel="stylesheet" href="./layui-v2.13.9/layui/css/layui.css">
+    <script src="./layui-v2.13.9/layui/layui.js"></script>
+</head>
+<body>
+    
+    <h1>学生管理</h1>
+    <div class = "layui-btn-container">
+        <button id = "addButton" class = "layui-btn">
+            新增学生
+        </button>
+        <button id = "deleteButton" class = "layui-btn layui-btn-danger">
+            删除学生
+        </button>
+    </div>
+    <script>
+        layui.use(["layer"],function(){
+            var layer = layui.layer;
+            var addButton = document.querySelector("#addButton");
+            var deleteButton = document.querySelector("#deleteButton");
+
+            addButton.addEventListener("click",function(){
+                layer.msg("新增学生",{
+                    icon:1,
+                    time:2000
+                });
+            });
+
+            deleteButton.addEventListener("click",function(){
+                layer.msg("删除学生",{
+                    icon:2,
+                    time:2000
+                });
+            });
+
+        });
+    </script>
+</body>
+</html>

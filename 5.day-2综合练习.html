@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>班级数据看板</title>
+    <link rel="stylesheet" href="./layui-v2.13.9/layui/css/layui.css">
+    <style>
+        body{
+            background-color: #f2f2f2;
+        }
+    </style>
+</head>
+<body>
+    <ul class="layui-nav">
+        <li class="layui-nav-item layui-this"><a href="javascript:;">概览</a></li>
+        <li class="layui-nav-item">
+            <a href="javascript:;">学生中心</a>
+            <dl class="layui-nav-child">
+                <dd><a href="javascript:;">学生列表</a></dd>
+                <dd><a href="javascript:;">新增学生</a></dd>
+            </dl>
+        </li>
+        <li class="layui-nav-item"><a href="javascript:;">考勤管理</a></li>
+    </ul>
+    <div class="layui-container">
+        <h1>班级数据看板</h1>
+        <div class="layui-row layui-col-space15">
+            <div class="layui-col-xs12 layui-col-md3">
+                <div class="layui-card">
+                    <div class="layui-card-header">学生总数</div>
+                    <div class="layui-card-body">45人</div>
+                </div>
+            </div>
+            <div class="layui-col-xs12 layui-col-md3">
+                <div class="layui-card">
+                    <div class="layui-card-header">今日出勤</div>
+                    <div class="layui-card-body">42人</div>
+                </div>
+                
+            </div>
+            <div class="layui-col-xs12 layui-col-md3">
+                <div class="layui-card">
+                    <div class="layui-card-header">请假人数</div>
+                    <div class="layui-card-body">2人</div>
+                </div>
+            </div>
+            <div class="layui-col-xs12 layui-col-md3">
+                <div class="layui-card">
+                    <div class="layui-card-header">缺勤人数</div>
+                    <div class="layui-card-body">1人</div>
+                </div>
+            </div>
+        </div>
+        <button id="attendanceButton" class="layui-btn">查看今日出勤</button>
+    </div>
+    <script src="./layui-v2.13.9/layui/layui.js"></script>
+    <script>
+        layui.use(["element","layer"],function(){
+
+            const layer=layui.layer;
+            const element=layui.element;
+            const attendanceButton=document.querySelector("#attendanceButton");
+
+            attendanceButton.addEventListener("click",function(){
+                layer.msg("今日出勤42人",{
+                    icon:1,
+                    time:2000
+                });
+            });
+        });
+    </script>
+</body>
+</html>

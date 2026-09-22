@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- 引入 layui.css -->
+    <link href="./layui-v2.13.9/layui/css/layui.css" rel="stylesheet">
+    <!-- 引入 layui.js -->
+    <script src="./layui-v2.13.9/layui/layui.js"></script>
+</head>
+<body>
+    <h1>我的Layui学习</h1>
+<button class = "layui-btn" id = "startButton">开始学习</button>
+
+
+    <div class = "layui-btn-container">
+        <button class="layui-btn" id = "addButton">新增学生</button>
+        <button class = "layui-btn layui-btn-normal">编辑学生</button>
+        <button class = "layui-btn layui-btn-danger layui-btn-sm">删除学生</button>
+    </div>
+
+    <script>
+        layui.use(function(){
+            var layer = layui.layer;
+            var button = document.querySelector("#startButton");
+            var addButton = document.querySelector("#addButton");
+
+            button.addEventListener("click",function(){
+                layer.msg("开始今天的学习",{
+                    icon:6,
+                    time:3000
+                });
+            });
+            addButton.addEventListener("click",function(){
+                layer.msg("准备新增学生",{
+                    icon:1,
+                    time:2000
+                });
+            });
+            
+        });
+    </script>
+</body>
+</html>

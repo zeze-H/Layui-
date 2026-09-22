@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>表单入门</title>
+    <link rel="stylesheet" href="./layui-v2.13.9/layui/css/layui.css">
+    <style>
+        body{
+            background-color: #f2f2f2;
+        }
+        .page-title{
+            margin-top:20px;
+            margin-bottom: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="layui-container">
+        <h1 class="page-title">新增学生</h1>
+
+        <div class="layui-card">
+            <div class="layui-card-header">学生信息</div>
+            <div class="layui-card-body">
+
+                <form class="layui-form">
+
+                    <div class="layui-form-item">
+                        <label class="layui-form-label" for="studentName">学生姓名</label>
+                        <div class="layui-input-block">
+                            <input
+                             class="layui-input"
+                             type="text"
+                             id="studentName"
+                             name="studentName"
+                             placeholder="请输入学生姓名"
+                             lay-verify="required"
+                            >
+                        </div>
+                    </div>
+
+                    <div class="layui-form-item">
+                        <label class="layui-form-label" for="studentNumber">学生编号</label>
+                        <div class="layui-input-block">
+                            <input
+                             class="layui-input"
+                             type="text" 
+                             id="studentNumber"
+                             name="studentNumber"
+                             placeholder="请输入学生编号"
+                             lay-verify="required">
+                            </div>
+                    </div>
+
+                    <div class="layui-form-item">
+                        <label class="layui-form-label" for="studentGender">学生性别</label>
+                        <div class="layui-input-block">
+                            <select name="gender" id="studentGender" lay-verify="required">
+                                <option value="">请选择学生性别</option>
+                                <option value="male">男</option>
+                                <option value="female">女</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="layui-form-item">
+                        <div class="layui-input-block">
+
+                            <button
+                                class="layui-btn"
+                                type="submit"
+                                lay-submit
+                                lay-filter="studentSubmit"
+                            >
+                                保存学生
+                            </button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+    <script src="./layui-v2.13.9/layui/layui.js"></script>
+    <script>
+        layui.use(["form","layer"],function(){
+            const form=layui.form;
+            const layer=layui.layer;
+            form.render();
+            form.on("submit(studentSubmit)",function(data){
+                console.log(data.field);
+                layer.msg("表单验证通过",{
+                    icon:1,
+                    time:2000
+                });
+                return false;
+            });
+        });
+    </script>
+</body>
+</html>

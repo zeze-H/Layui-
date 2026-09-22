@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>学生管理仪表盘</title>
+    <link rel="stylesheet" href="./layui-v2.13.9/layui/css/layui.css">  
+    
+    <style>
+        body {
+            background-color:#f2f2f2;
+        }
+        .dashboard-title{
+            margin: 20px 0px;
+        }
+    </style>
+</head>
+<body>
+    <ul class="layui-nav">
+        <li class="layui-nav-item layui-this"><a href="javascript:;">首页</a></li>
+        <li class="layui-nav-item">
+            <a href="javascript:;">学生管理</a>
+            <dl class="layui-nav-child">
+                <dd><a href="javascript:;">学生列表</a></dd>
+                <dd><a href="javascript:;">新增学生</a></dd>
+            </dl>
+        </li>
+        <li class="layui-nav-item"><a href="javascript:;">课程管理</a></li>
+    </ul>
+    <div class = "layui-container">
+        <h1 class = "dashboard-title">学生管理仪表盘</h1>
+        <div class="layui-row layui-col-space15">
+            <div class = "layui-col-xs12 layui-col-md4">
+                <div class = "layui-card">
+                    <div class="layui-card-header">学生总数</div>
+                    <div class="layui-card-body">128人</div>
+                </div>
+            </div>
+            <div class = "layui-col-xs12 layui-col-md4">
+                <div class = "layui-card">
+                    <div class="layui-card-header">今日新增</div>
+                    <div class="layui-card-body">6人</div>
+                </div>
+            </div>
+            <div class = "layui-col-xs12 layui-col-md4">
+                <div class = "layui-card">
+                    <div class="layui-card-header">待处理申请</div>
+                    <div class="layui-card-body">3条</div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="./layui-v2.13.9/layui/layui.js"></script>
+    <script>
+        layui.use(["element"],function(){
+            const element = layui.element;
+        });
+    </script>
+</body>
+</html>
