@@ -56,6 +56,6 @@ function handleStudentSubmit(data) {
 
 ## 本节小实验
 
-继续改 `9.复习-学生信息页.html`：只给已有的 `handleStudentSubmit` 增加 `data` 参数，把原来输出固定文字的 `console.log` 改成 `console.log(data.field)`。填写“王五”，选择“男”后点击保存。展开控制台对象，找出 `studentName`、`gender` 两个键和值各来自哪行 HTML。然后将姓名改成“李四”再保存，观察哪个值发生变化。
+继续改 `8.复习-学生信息页.html`：只给已有的 `handleStudentSubmit` 增加 `data` 参数，把原来输出固定文字的 `console.log` 改成 `console.log(data.field)`。填写“王五”，选择“男”后点击保存。展开控制台对象，找出 `studentName`、`gender` 两个键和值各来自哪行 HTML。然后将姓名改成“李四”再保存，观察哪个值发生变化。
 
 如果看到的是 `{ studentName: "王五", gender: "male" }` 一类对象、页面不跳转，并且你能指出每个键和值的来源，本节通过。之后我们再做从空文件串联的综合练习。官方依据：[Layui form 提交回调与 `data.field`](https://layui.dev/docs/2/form/)。
