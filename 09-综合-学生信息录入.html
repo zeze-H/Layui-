@@ -19,7 +19,21 @@
             <div class="layui-col-xs12 layui-col-md6">
                 <div class="layui-card">
                     <div class="layui-card-header">班级概况</div>
-                    <div class="layui-card-body">学生总数:45</div>
+                    <div class="layui-card-body">学生总数:45
+                        <button type="button" class="layui-btn" id="classBtn">
+                            班级说明
+                        </button>
+                        <div class="layui-tab">
+                            <ul class="layui-tab-title">
+                                <li class="layui-this">班级</li>
+                                <li>老师</li>
+                            </ul>
+                            <div class="layui-tab-content">
+                                <div class="layui-tab-item layui-show">软件技术2班:45人</div>
+                                <div class="layui-tab-item">班主任:大哲</div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
             <div class="layui-col-xs12 layui-col-md6">
@@ -64,6 +78,19 @@
                                 </div>
                             </div>
                             <div class="layui-form-item">
+                                <label for="studentBirth" class="layui-form-label">出生日期</label>
+                                <div class="layui-input-block">
+                                    <input
+                                    type="text"
+                                    name="studentBirth"
+                                    id="studentBirth" 
+                                    class="layui-input" 
+                                    placeholder="请选择出生日期" 
+                                    lay-verify="required"
+                                    >
+                                </div>
+                            </div>
+                            <div class="layui-form-item">
                                 <div class="layui-input-block">
                                     <button class="layui-btn" type="button" id="SM">查看填写说明</button>
                                     <button class="layui-btn" type="submit" lay-submit lay-filter="studentInfo">保存学生</button>
@@ -81,20 +108,51 @@
             const element=layui.element;
             const form=layui.form;
             const layer=layui.layer;
+            const laydate=layui.laydate;
 
             form.render();
 
+            laydate.render({
+                elem:"#studentBirth"
+            });
+
             const helpButton = document.querySelector("#SM");
             helpButton.addEventListener("click",function(){
-                layer.msg("姓名,性别,学号,都要填写");
+                layer.alert("姓名,性别,学号,都要填写");
+            });
+            
+            const classInfo = document.querySelector("#classBtn");
+            classInfo.addEventListener("click",function(){
+                layer.open({
+                    type:1,
+                    title:"班级说明",
+                    content:"<div class='layui-padding-3'><h5>班级姓名:软件技术</h5><p>学生总数:45人</p><p>这行没想好写啥</p></div>"
+                });
             });
 
             function studentInfo(data){
-                console.log(data.field);
-                layer.msg("登记成功");
+
+                
+
+                layer.confirm("确定要保存吗?",function(index){
+                    
+                    console.log(index);
+                    console.log(data.field);
+
+                    layer.close(index);
+                    layer.msg("已收到表单数据");
+                });
+
+                
+                
                 return false;
-            }
+                
+                
+            };
             form.on("submit(studentInfo)",studentInfo);
+            
+
+             
         });
         
     </script>

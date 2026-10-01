@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>学生录入页</title>
+    <link rel="stylesheet" href="./layui-v2.13.9/layui/css/layui.css">
+</head>
+<body>
+    <ul class="layui-nav">
+        <li class="layui-nav-item layui-this"><a href="javascript:;">概览</a></li>
+        <li class="layui-nav-item"><a href="javascript:;">学生管理</a></li>
+        <li class="layui-nav-item"><a href="javascript:;">考勤</a></li>
+    </ul>
+
+    <div class="layui-container">
+        <h1>学生信息录入</h1>
+        <div class="layui-row layui-col-space15">
+            <div class="layui-col-md3 layui-col-xs6">
+                <div class="layui-card">
+                    <div class="layui-card-header">学生总数</div>
+                    <div class="layui-card-body">45</div>
+                </div>
+            </div>
+            <div class="layui-col-md3 layui-col-xs6">
+                <div class="layui-card">
+                    <div class="layui-card-header">男生</div>
+                    <div class="layui-card-body">25</div>
+                </div>
+            </div>
+            <div class="layui-col-md3 layui-col-xs6">
+                <div class="layui-card">
+                    <div class="layui-card-header">女生</div>
+                    <div class="layui-card-body">20</div>
+                </div>
+            </div>
+            <div class="layui-col-md3 layui-col-xs6">
+                <div class="layui-card">
+                    <div class="layui-card-header">今日出勤</div>
+                    <div class="layui-card-body">43</div>
+                </div>
+            </div>
+        </div>
+        <div class="layui-row layui-col-space15">
+            <div class="layui-col-md8 layui-col-xs12">
+                <form class="layui-form">
+                    <div class="layui-form-item">
+                        <label for="studentName" class="layui-form-label">学生姓名</label>
+                        <div class="layui-input-block">
+                            <input 
+                            type="text"
+                            class="layui-input"
+                            id="studentName"
+                            name="studentName"
+                            >
+                        </div>
+                    </div>
+                </form>
+            </div>
+            <div class="layui-col-md4 layui-col-xs12"></div>
+        </div>
+    </div>   
+</body>
+</html>

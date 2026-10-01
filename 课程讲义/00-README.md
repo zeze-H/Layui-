@@ -18,6 +18,11 @@
 4. [综合练习：学生信息录入页](0921-05-综合练习-学生信息录入页.md)
 5. [补课：函数与 render / field / form.on](0929-01-补课-函数与render-field-form.on.md)（综合练习代码写完后的补充讲解与口头验收）
 
+## Day 4 讲义顺序
+
+1. [Day4-01：layer.confirm（询问框）](0930-01-Day4-01-layer.confirm.md)
+2. [Day4-03：layer.open（自定义弹层）](0930-02-Day4-03-layer.open.md)（`layer.alert` 较简单，未单独写讲义）
+
 ## 历史讲义
 
 文件名按日期排序，记录实际学习过程。带“旧版”的讲义保留作历史对照，不作为当前任务：
